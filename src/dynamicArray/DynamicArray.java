@@ -38,6 +38,18 @@ public class DynamicArray {
 
     }
 
+    public void update(int index, Object data){
+        if(size >= capacity){
+            grow();
+        }
+        if(!(index > capacity)){
+            array[index] = data;
+        }
+        else{
+            System.out.println("Index out of bounds of capacity!");
+        }
+    }
+
     public void delete(Object data) {
         for(int i = 0; i < size; i++){
             if(array[i] == data){
@@ -46,7 +58,7 @@ public class DynamicArray {
                 }
                 array[size-1] = null;
                 size--;
-                if(size<=(int) (capacity/3)){
+                if(size <= (int) (capacity/3)){
                     shrink();
                 }
                 break;
