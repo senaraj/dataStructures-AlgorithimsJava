@@ -18,6 +18,7 @@ public class Main {
 
         }
 
+
         //Linked List
         startTime = System.nanoTime();
         linkedList.remove(999999);
